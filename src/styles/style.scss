@@ -1,0 +1,505 @@
+@use "./normalize.scss";
+@use "./base.scss";
+@use "./fonts.scss";
+@use "./variables.scss";
+@use "./mixins.scss";
+@use "./global.scss";
+
+.welcome {
+  background-color: variables.$blue;
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+
+
+
+    @media(variables.$desktop) {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    color: variables.$white;
+    gap: 20px;
+
+    @media (variables.$desktop) {
+      align-items: start;
+    }
+  }
+
+  &__title {
+    text-align: center;
+
+    @media(variables.$desktop) {
+      text-align: start;
+    }
+  }
+
+  &__description-menu {
+    @include mixins.font-rem(16);
+
+    @media (variables.$tablet) {
+      @include mixins.font-rem(18);
+    }
+
+    @media (variables.$desktop) {
+      @include mixins.font-rem(20);
+    }
+  }
+
+  &__description-item {
+    display: flex;
+
+    svg {
+      margin-right: 10px;
+      fill: currentColor;
+      align-items: start;
+    }
+  }
+
+  &__img {
+    max-width: 469px;
+    max-height: 215px;
+    width: 100%;
+  }
+}
+
+.about {
+  background-color: variables.$white;
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+
+    @media (variables.$desktop) {
+      flex-direction: row;
+      gap: 85px;
+    }
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  &__title {
+    text-align: center;
+
+    @media (variables.$desktop) {
+      text-align: start;
+    }
+  }
+
+  &__description {
+    @include mixins.font-rem(16);
+  }
+
+  &__img {
+    max-width: 430px;
+    max-height: 250px;
+    width: 100%;
+  }
+}
+
+.dignity {
+  background-color: variables.$lightGray;
+
+  &__inner {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  &__title {
+    text-align: center;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+
+    @media (variables.$desktop) {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  &__grid-item {
+    @include mixins.font-rem(16);
+    display: flex;
+    align-items: start;
+    color: variables.$blue;
+
+    svg {
+      margin-right: 10px;
+      max-width: 32px;
+      max-height: 32px;
+      width: 100%;
+      fill: currentColor;
+      object-fit: cover;
+    }
+  }
+}
+
+.screenshots {
+  background-color: variables.$white;
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  &__grid {
+    display: grid;
+    gap: 30px;
+    grid-template-columns: 1fr;
+
+    @media (variables.$desktop) {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  &__grid-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+
+    @media (variables.$tablet) {
+      flex-direction: row;
+    }
+  }
+
+  &__img {
+    min-height: 150px;
+    height: 100%;
+    width: 100%;
+
+    @media(variables.$tablet) {
+      max-width: 200px;
+      width: 100%;
+      flex-shrink: 0;
+    }
+  }
+
+  &__text {
+    @include mixins.font-rem(16);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+
+    @media(variables.$tablet) {
+      align-items: start;
+    }
+  }
+
+  &__item-title {
+    text-align: center;
+
+    @media(variables.$tablet) {
+      text-align: start;
+    }
+  }
+
+  &__description {
+    text-align: center;
+
+    @media(variables.$tablet) {
+      text-align: start;
+    }
+  }
+}
+
+.reviews {
+  background-color: variables.$lightGray;
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 60px;
+
+    @media(variables.$tablet) {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  &__grid-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+
+    @media(variables.$desktop) {
+      flex-direction: row;
+      align-items: start;
+    }
+  }
+
+  &__img {
+    max-width: 75px;
+    aspect-ratio: 1;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 50%;
+  }
+
+  &__text {
+    @include mixins.font-rem(14);
+    padding: 15px;
+    background-color: variables.$darkGray;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    position: relative;
+    border-radius: 5px;
+
+    &::before {
+      content: '';
+      width: 24px;
+      aspect-ratio: 1;
+      background-color: inherit;
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(45deg);
+      border-radius: 5px;
+
+      @media(variables.$desktop) {
+        top: 35px;
+        left: 0;
+      }
+    }
+  }
+
+  &__quote {
+    font-style: italic;
+    color: variables.$black;
+  }
+
+  &__author {
+    color: rgba(0, 0, 0, 0.5)
+  }
+}
+
+.buy {
+  background-color: variables.$white;
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+  }
+
+  &__title {
+  }
+
+  &__card-list {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+
+    @media(variables.$desktop) {
+      flex-direction: row;
+      width: 100%;
+      gap: 25px;
+      align-items: end;
+      justify-content: space-around;
+    }
+  }
+
+  &__card-item {
+    background-color: variables.$blue;
+    padding: 5px 3px 20px;
+    border-radius: 5px;
+    width: 300px;
+  }
+
+  &__card-inner {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__card-title {
+    color: variables.$white;
+    text-align: center;
+    padding-block: 10px;
+  }
+
+  &__card-price {
+    @include mixins.font-rem(40);
+    color: variables.$blue;
+    background-color: variables.$white;
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+  }
+
+  &__card-description {
+    @include mixins.font-rem(14);
+    color: variables.$white;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding-block: 20px;
+  }
+
+  &__card-btn {
+    @include mixins.button();
+  }
+}
+
+
+.footer {
+  background-color: variables.$blue;
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+  }
+
+  &__title {
+    @include mixins.h2(variables.$white);
+    margin-bottom: 25px;
+    text-align: center;
+  }
+
+  &__info {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 40px;
+    flex-wrap: wrap;
+  }
+
+  &__form {
+    max-width: 500px;
+    flex: 1 1 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    @media (variables.$tablet) {
+      flex: 1 1 50%;
+    }
+
+    &-input {
+      width: 100%;
+    }
+
+    &-textarea {
+      width: 100%;
+      resize: none
+    }
+
+    &-input, &-textarea {
+      &:focus {
+        outline: none;
+      }
+      &:focus-visible {
+        outline: 1px solid rgb(127, 255, 212);
+      }
+    }
+
+    &-button {
+      @include mixins.button(140px, 16);
+      margin: auto;
+      letter-spacing: 0.5px;
+    }
+  }
+
+  &__links {
+    width: 250px;
+    height: 230px;
+    display: flex;
+    flex: 0 0 250px;
+    flex-direction: column;
+    align-items: center;
+
+    @media (variables.$tablet) {
+      align-items: start;
+    }
+  }
+
+  &__contacts-list {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+
+    svg {
+      width: 24px;
+      height: 24px;
+      fill: currentColor;
+    }
+
+  }
+
+  &__contacts-item {
+
+    &:nth-child(4) {
+      svg {
+        transform: scaleX(-1) rotate(-15deg);
+      }
+    }
+  }
+
+  &__contacts-link {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  &__socials-list {
+    display: flex;
+  }
+
+  &__socials-item {
+    font-family: variables.$iconFont;
+    @include mixins.font-rem(60);
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  :is(a, button):hover {
+    opacity: 0.7;
+  }
+  :is(input, textarea):hover {
+    outline: 1px solid rgba(127, 255, 212, 0.5);
+  }
+}
+
+button:active {
+  transform: scale(0.95);
+  background-color: aquamarine;
+}
+
+a:active {
+  color: aquamarine;
+}

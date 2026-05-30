@@ -1,0 +1,53 @@
+@use "sass:math";
+@use "./variables.scss";
+
+@mixin font-rem($px) {
+  font-size: math.div($px, 16) * 1rem;
+}
+
+@mixin h1($color: variables.$white) {
+  @include font-rem(40);
+  color: $color;
+  text-shadow: variables.$mainShadow;
+  line-height: 100%;
+  font-weight: 400;
+
+  @media (variables.$tablet) {
+    @include font-rem(60);
+  }
+}
+
+@mixin h2($color: variables.$blue) {
+  @include font-rem(30);
+  color: $color;
+  line-height: 1.2;
+  font-weight: 400;
+}
+
+@mixin h3($color: variables.$blue, $align: center) {
+  @include font-rem(24);
+  line-height: 1.25;
+  font-weight: 400;
+}
+
+@mixin p($fontSize, $lineHeight, $fontStyle: normal, $color: variables.$black) {
+  @include font-rem($fontSize);
+  line-height: $lineHeight;
+  font-style: $fontStyle;
+  color: $color;
+}
+
+@mixin button($width: 260px, $fontSize: 18) {
+  background-color: variables.$white;
+  border-radius: 5px;
+  text-align: center;
+  border: none;
+  @include font-rem($fontSize);
+  text-transform: uppercase;
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: none;
+  color: variables.$blue;
+  width: $width;
+  padding-block: 5px;
+}

@@ -1,0 +1,33 @@
+@use "./mixins.scss";
+@use "./variables.scss";
+
+body {
+  font-family: variables.$mainFont, sans-serif;
+}
+
+h1 {
+  @include mixins.h1();
+}
+
+h2 {
+  @include mixins.h2();
+}
+
+h3 {
+  @include mixins.h3();
+}
+
+img {
+  object-fit: cover;
+  object-position: center;
+  overflow: hidden;
+  background-color: variables.$blue;
+}
+
+a {
+  text-decoration: none;
+  color: variables.$white;
+}
+a, button {
+  transition: 0.2s;
+}
