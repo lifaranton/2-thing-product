@@ -1,4 +1,4 @@
-# Project name
+# Thing-product
 Simple landing page built with Vite
 
 ## Tech stack
